@@ -22,27 +22,6 @@ Better communication of player roles
 Four player local support is pointless as the game is two player
     Being able to log in and out via profile system means 4 controllers isn't necessary
         Hotswap controller and have next player login to their own profile
-Clash state needs to be more obvious
-    Declare outcome if notable (a.k.a. non-draw)
-        Coloured text (red tint for caster, blue tint for shooter)
-        "Cast extension +10sec"
-        "Clash strike"
-    Show player lane and stance for 3.. 2.., hide it for 1..., then show again on Clash! when inputs are locked in
-        Indicates that players can affect outcome with input
-        Explicitly communicates outcome in the context of those inputs
-        Adds to clash mindgame
-            Indicates to players that they should be thinking about what their opponent will do
-        How to indicate?
-            UI next to character?
-                Explicit
-                Instantly readable
-            Character animation?
-                Readable if animation poses are distinct
-                Adds element of style, cool poses
-                More implicit
-            UI and animation?
-                Best of both worlds
-                Can implement independently
 Shooter feels like they have more agency despite having less of a toolset
     Currently they dictate the fight as the caster has no way to avoid damage
     Caster needs defense tools and ways to force the shooter to not strafe across them
