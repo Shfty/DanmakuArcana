@@ -17,19 +17,10 @@ public:
 	virtual void Tick(const float DeltaTime, FSlateApplication& SlateApp, TSharedRef<ICursor> Cursor);
 	virtual bool HandleKeyDownEvent(FSlateApplication& SlateApp, const FKeyEvent& InKeyEvent);
 	virtual bool HandleMouseButtonDownEvent(FSlateApplication& SlateApp, const FPointerEvent& MouseEvent);
-	virtual bool HandleAnalogInputEvent(FSlateApplication& SlateApp, const FAnalogInputEvent& InAnalogInputEvent);
 
 public:
 	static bool IsKeyboardUserUsingPad;
 
 private:
 	TMap<int32, TSharedPtr<SWidget>> CachedWidgets;
-
-	const float AnalogDeadzone;
-
-	TArray<float> PrevAnalogXArray;
-	TArray<float> PrevAnalogYArray;
-
-	float PrevAnalogX;
-	float PrevAnalogY;
 };

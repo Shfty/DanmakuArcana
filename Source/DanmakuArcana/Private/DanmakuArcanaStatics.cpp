@@ -42,30 +42,38 @@ bool UDanmakuArcanaStatics::MatchRegex(FString Source, FString Pattern)
 	return RegexMatcher.FindNext();
 }
 
+TSharedPtr<FDanmakuArcanaInputProcessor> InputProcessor;
 void UDanmakuArcanaStatics::RegisterInputProcessor()
 {
-	TSharedPtr<FDanmakuArcanaInputProcessor> InputProcessor(new FDanmakuArcanaInputProcessor());
+	if(!InputProcessor.IsValid())
+	{
+		InputProcessor = TSharedPtr<FDanmakuArcanaInputProcessor>(new FDanmakuArcanaInputProcessor());
+	}
 
 	FSlateApplication& SlateApp = FSlateApplication::Get();
-	SlateApp.SetInputPreProcessor(true, InputProcessor);
+	SlateApp.RegisterInputPreProcessor(InputProcessor);
 }
 
 void UDanmakuArcanaStatics::UnregisterInputProcessor()
 {
 	FSlateApplication& SlateApp = FSlateApplication::Get();
-	SlateApp.SetInputPreProcessor(false, nullptr);
+	SlateApp.UnregisterInputPreProcessor(InputProcessor);
 }
 
 void UDanmakuArcanaStatics::RegisterNavigationConfig()
 {
 	FSlateApplication& SlateApp = FSlateApplication::Get();
-	SlateApp.SetNavigationConfig(MakeShareable(new FDanmakuArcanaNavigationConfig()));
+	SlateApp.SetNavigationConfigFactory([]() -> TSharedRef<FNavigationConfig> {
+		return MakeShareable(new FDanmakuArcanaNavigationConfig());
+	});
 }
 
 void UDanmakuArcanaStatics::UnregisterNavigationConfig()
 {
 	FSlateApplication& SlateApp = FSlateApplication::Get();
-	SlateApp.SetNavigationConfig(MakeShareable(new FNavigationConfig()));
+	SlateApp.SetNavigationConfigFactory([]() -> TSharedRef<FNavigationConfig> {
+		return MakeShareable(new FNavigationConfig());
+	});
 }
 
 int32 UDanmakuArcanaStatics::GetKeyboardUserIndex()

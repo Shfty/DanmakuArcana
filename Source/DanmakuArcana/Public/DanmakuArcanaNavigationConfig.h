@@ -13,6 +13,4 @@ class DANMAKUARCANA_API FDanmakuArcanaNavigationConfig : public FNavigationConfi
 public:
 	FDanmakuArcanaNavigationConfig();
 	~FDanmakuArcanaNavigationConfig();
-
-	virtual EUINavigation GetNavigationDirectionFromKey(const FKeyEvent& InKeyEvent) const override;
 };

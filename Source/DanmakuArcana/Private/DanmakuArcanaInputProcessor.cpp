@@ -6,10 +6,9 @@
 
 bool FDanmakuArcanaInputProcessor::IsKeyboardUserUsingPad = false;
 
-FDanmakuArcanaInputProcessor::FDanmakuArcanaInputProcessor() : AnalogDeadzone(0.8f)
+FDanmakuArcanaInputProcessor::FDanmakuArcanaInputProcessor()
 {
-	PrevAnalogXArray.InsertZeroed(0, 4);
-	PrevAnalogYArray.InsertZeroed(0, 4);
+
 }
 
 FDanmakuArcanaInputProcessor::~FDanmakuArcanaInputProcessor()
@@ -52,42 +51,6 @@ bool FDanmakuArcanaInputProcessor::HandleMouseButtonDownEvent(FSlateApplication&
 			CachedWidgets.Add(CachedUserIndex, SlateApp.GetUserFocusedWidget(CachedUserIndex));
 		}
 	});
-
-	return false;
-}
-
-void SpoofKeypress(FSlateApplication& SlateApp, const FKey& Key, const int32 UserIndex) {
-	FKeyEvent Event(Key, FModifierKeysState(), UserIndex, false, -1, -1);
-	SlateApp.ProcessKeyDownEvent(Event);
-	SlateApp.ProcessKeyUpEvent(Event);
-}
-
-bool FDanmakuArcanaInputProcessor::HandleAnalogInputEvent(FSlateApplication& SlateApp, const FAnalogInputEvent& InAnalogInputEvent)
-{
-	FKey Key = InAnalogInputEvent.GetKey();
-	float AxisValue = InAnalogInputEvent.GetAnalogValue();
-	int32 UserIndex = InAnalogInputEvent.GetUserIndex();
-
-	if(Key == EKeys::Gamepad_LeftX) {
-		if (AxisValue >= AnalogDeadzone && PrevAnalogXArray[UserIndex] < AnalogDeadzone) {
-			SpoofKeypress(SlateApp, EKeys::Gamepad_DPad_Right, UserIndex);
-		}
-		else if (AxisValue <= -AnalogDeadzone && PrevAnalogXArray[UserIndex] > -AnalogDeadzone) {
-			SpoofKeypress(SlateApp, EKeys::Gamepad_DPad_Left, UserIndex);
-		}
-
-		PrevAnalogXArray[UserIndex] = AxisValue;
-	}
-	else if (Key == EKeys::Gamepad_LeftY) {
-		if (AxisValue >= AnalogDeadzone && PrevAnalogYArray[UserIndex] < AnalogDeadzone) {
-			SpoofKeypress(SlateApp, EKeys::Gamepad_DPad_Up, UserIndex);
-		}
-		else if (AxisValue <= -AnalogDeadzone && PrevAnalogYArray[UserIndex] > -AnalogDeadzone) {
-			SpoofKeypress(SlateApp, EKeys::Gamepad_DPad_Down, UserIndex);
-		}
-
-		PrevAnalogYArray[UserIndex] = AxisValue;
-	}
 
 	return false;
 }
