@@ -1,0 +1,299 @@
+1v1 shmup
+Turn-based
+    One player is always shooting while the other casts
+    Swap role each turn
+        Chance for interaction while switching?
+            Rock Paper Scissors clash mechanic
+                Up / Down / Center on joystick for stance, determines rock/paper/scissors
+                Left / Right / Center on joystick for lane, clash occurs if both players pick the same lane
+                Bounce back and redo RPS on draw
+                Casting player gets turn extension on win
+                    Shorter than standard turn
+                Shooting player gets bonus damage on win
+                    Smash opponent to lower half of screen
+                    Roughly 1 turn of damage?
+            Left / Right / Center path choice when switching
+                1/3 chance of clash
+            Certain situations in which both players switch to the same mode?
+                Card effect?
+                Match event?
+                    Draw decider?
+Card-based
+    Build deck before each match
+        Casting cards
+        Shooting cards
+        16-20 cards per deck
+        5-8 cards per hand
+        Each card has a cost
+        Separate cost limits for deck and hand
+        Separate hands for shooting and casting, or shared? Mode switch?
+    Redraw when hand is depleted, or every 3-or-so rounds? Mode switch?
+        Delays next turn
+        Done on a timer to prevent abuse
+    All cards available from the start in VS mode
+    Cards are separated by faction and character
+        Antivirus AI programs
+            'Ruby'
+        Firewall AI programs
+            'Endian'
+                Hot-blooded
+            'Wing'
+                Little starfighter
+                Created from old low-poly game data
+        Admin_Sys
+            Sysadmin users
+            'Ezra'
+                Sysadmin
+                Owns and runs the Danmaku Arcana server
+                    Hobby project with Cherry when they're not working with the Fight Squad
+                    "I told you building your own distro for this was a bad idea"
+                        "Nah, building my own distro means I can do THIS"
+                The Jeff Gerstmann-esque walking encyclopedia of Danmaku games
+                    Casual genre omniscience
+                    Not necessarily godly at playing them
+                Full sysadmin permissions
+                    Does she have the ability to nuke the whole system with rm -rf /?
+                        Compromised by the hackers as a plot point?
+                            Could have her threaten to do it and have the hackers downgrade her account
+                                Ultimately for the good because the AIs are 'alive'
+                        Unwilling due to the presence of sapient AIs?
+                            Paints her as a more sympathetic character than a system nuke
+                            Avoids nerfing her admin powers
+                                Good excuse for cool abilities
+                Not a pro sysadmin in terms of experience, but competent enough to wrangle a linux system
+            'Cherry'
+                Moderator
+                Danmaku enthusiast
+                    Has finished all of the Touhou (or in-universe alternative) games on the highest difficulty
+                        "Touhou XXVI was innovative but brutal"
+                        "Call me old fashioned but 8 is still the best"
+                    Owns 2+ arcade sticks
+                        "A lot of people prefer seimutsu for these games but sanwa is my favourite"
+                Doesn't have as many elevated server permissions as Ezra
+                    Plot device for run-ins with hackers and rogue AIs
+                Casual hobbyist programmer
+                    Still learning basic C++, no framework/engine knowledge
+        Hackers
+            InfoSec users
+            'Tycho'
+    Cards are avatar modules
+        "Oh, like a subroutine?"
+            "No, they're considerably more complex than subroutines. Think of them as plugins."
+    Different game modes for different restrictions
+        Character-locked
+            Characters can only use their decks
+        Faction-locked
+            Characters can only use cards from their faction
+        Free for all
+            Characters can use any cards
+    Separate card types for shoot and cast modes
+        Cast
+            Bullet patterns
+                Forms the basis of a casting turn
+                Has a startup time, can be stopped during startup if the shooting player can deal enough damage
+                Can't move during startup
+                Flashes name and pattern visualization on screen when activated
+            Direct attacks
+                Multi-use attacks to augment bullet patterns
+            Defensive technqiues
+                Bubble shield
+                    Gradius-style radial shield with limited health
+                Physical shield
+                    Gradius-style frontal shield with limited health
+                Shadow clone
+                    Spawns an autonomous clone and freezes life bar for a duration
+                    Any damage to clone is null, damage to caster is accumulated and applied when card times out
+            Trick techniques
+                Pull a swerve on your opponent
+                Blink
+                    All bullets are invisible for the next second w/obvious windup
+                Delta Zero
+                    Pause bullets temporarily
+                Redux
+                    Rewind bullet pattern
+                Feint
+                    Scripted dash to opponent's front
+                    Set duration in which any damage received will trigger a grab counter
+                    Recovery period with no control to reward opponent with free damage on hard read
+                Constrict
+                    Temporarily shrink play area
+            Movement styles
+                Standard movement
+                    Eight-way control
+                    Always vulnerable
+                Point-to-point dash
+                    Position target with movement controls
+                    Release button to dash
+                    Invincible during dash
+                    Cooldown period to prevent abuse
+        Shoot
+            Movement styles
+                Like Touhou player movement
+            Shot types
+                Normal
+                    Equip-time cost
+                    Fire rate, damage and size parameters
+                Counter
+                    Equip time cost
+                    Successive hits fill a bar
+                    Bar drains over time
+                    When bar is maxed, ends the opponent's turn and forces a single lane clash
+                    Runtime cost- drains more of user's power with each shot, returns power over time
+        Melee
+            Equip time cost
+            Runtime cost- drains power with each swing, returns all at once when combo ends or is cancelled by another move
+            Grabs?
+                Tech by activating a grab card of your own within a time window?
+                    Adds an element of card counter-picking, encourages equipping a grab
+                        Potential to wreck balance if certain characters lack grabs
+        Modifier
+            Augment existing abilities with extra effects
+            Clash
+                Change how clash works
+                Equip-time cost
+                Runtime cost to activate?
+                Thousand fists
+                    Triggers on clash win
+                    Lower base damage
+                    Mash for bonus damage
+                    Overall higher damage potential than standard clash
+                    ORAORAORAORAORA
+                Overpower
+                    Triggers on clash draw
+                    Go into a weapon-locked mash-off, winner is the first to fill a bar
+Life bar-based
+    Take a chunk of damage if hit by bullet pattern
+    Chip damage if hit by shooting
+    Need to balance so neither style is inferior
+Card limits
+    Passive cards limited by equip-time cost
+        Cannot exceed power limit when building hand
+        Leftover power is made available for runtime use
+        Includes shot types, cast movement types, etc.
+    Active cards are limited by runtime cost
+        Cannot cast if using the card would push you above power limit
+        Active cards consume power based on a cooldown independent of bullet pattern duration
+        Includes shot supers, cast patterns, etc.
+
+Game flow
+    Login
+    RPS to pick side, no countdown
+    Battle phase
+    RPS to switch side w/countdown
+    Return to battle phase
+    When player lifebar is reduced to 0, game over
+
+Single-player content
+    Campaign
+        Very blue sky / out of scope idea
+        Card collecting RPG
+        Pokemon-esque, but with deck building instead of leveling up
+        VS characters are present in-universe, but you play as your own character
+
+    Training Mode
+        Bullet pattern visualization
+        Star-based scoring system that rewards perfect clears
+
+    Arcana Archive
+        More feasible idea
+        "Records of climactic battles from the distant past"
+        Scripted self-contained 'mission mode' fights chosen from a menu
+            Fixed character, deck and hands
+            Tells a short story
+            Rounds synchronized with music
+            (ex. Tsuki Made Todoke, Fushi no Kemuri from Touhou 8 OST - https://youtu.be/fHrk_6YEtpI?list=PL67F11CEA03E7FE5F)
+
+Ideas
+    Character idea
+        Four set casting movement cards that move you to a fixed point on your half of the screen
+        Moving between points triggers a different attack based on your position and location
+        3 options per position * 4 positions = 12 attack permutations
+        Independent cooldowns to limit the player's options and encourage interesting strategies
+
+    Concept framing
+        First run / tutorial presents the Danmaku Arcana as a big spellbook, fancy paper page turning animations etc.
+        Have the game glitch out / de-rez into a more digital aesthetic upon tutorial completion
+            In-game call-to-action / protagonist introduction?
+                On-screen text box, "What the-?"
+                Interface disintegrates into new vector line tron look
+                "Why is it falling back to the old interface? I meant to clear that out ages ago"
+        In reality, the Danmaku Arcana is a server and you're accessing it via terminal
+            Framing should make sense, don't want to fall into the 'because future' hole
+                Ex: .hack://G.U. is set in an online game capable of causing real-world network crises and putting players in comas
+                Why? An online game is a self-contained program running on a set of servers
+                The servers could be compromised and repurposed as a botnet, that's believable
+                The comas on the other hand are unexplained, more or less hand-waved as future internet magic
+                In that case, the concept is too lofty for the framing
+            What sort of server? Online game? Archive of some sort?
+                Passion project run by fans of the danmaku shooter genre? Game preservation, etc.
+                    People can log in and play old danmaku games
+                        Like the internet archive but for a game genre
+                        Public domain
+                        Good excuse for some retro-styled bonus content
+                    Something causes the data/programs to develop into sapient AIs
+                        Aware enough to act like people, but not enough to know they're part of a simulation
+                            Possible plot device?
+                                Admin_Sys discovers AIs, introduces a 'Prime Directive' as a safety measure
+                                    AIs are not allowed to know that they're in a simulation
+                                    They appear sapient and can affect the system, safer not to risk destabilizing them
+                                    The truth inevitably gets out and plot ensues
+                    Real-world users log in with avatars
+                        Normal players
+                        Admins / Moderators
+                        Hackers
+                            Small-time
+                                Lulz hackers
+                                Defacing UI
+                                Altering existing scenarios
+                                    Making games unwinnable with ridiculous enemy/bullet patterns
+                                        Kaizo
+                                Uploading their own games as a form of advertising
+                                    Mostly crap
+                                    One or two genuinely good entries despite the methodology
+                                Mining cryptocurrency and eating performance
+                                    Existing scenarios start 'lagging'
+                                        Player movement is smooth, but bullets run at a much-reduced tick rate with high delta time
+                            Big-time
+                                Cause of the simulation
+                                Repurposing existing codebase to develop advanced AI
+                                    Motivations? Why are they trying to create artificial people?
+                                        'Blacksite' Military development?
+                                            Contrived and predictable
+                                        Skilled hacker collective
+                                            Less /el/, more Entropy
+                                            Focused, with purpose
+                                            More interesting than military / government shenanigans
+                                            Using the Danmaku Arcana server as a development sandbox
+                                                Trying to create a next-generation computing environment
+                                                    ICE - Immersive Computing Environment?
+                                                        Wanting to make TRON a reality
+                                                        Porting stuff like git into the 3D simulation world
+                                                        Users fly around
+                                                            Can teleport to cover large distances
+                                                                Blink card
+                                                                Convenience feature, helps justify feasability
+                                                    AI developer/s on the team
+                                                    Deletes old traditional environment after Admin_Sys users get their accounts
+                                                        Plot contrivance to ensure all system tasks are done 'in-game'
+                                                            Opens up possibilities for sysadmin gameplay scenarios
+                                                            Sidesteps "why not just use the terminal?"
+                    Log in with VR/AR as it's the new standard in future computing
+                        Believable contrivance for operator sensory presence in game world
+                        Archived games range from old 2D to hypothetical future 3D and VR/AR danmaku
+                            In-world setting is 3D
+                                Explained via existing code being repurposed to create the simulation
+                            Callback to shmup 3D prototype?
+                    Real-world users are NOT at risk
+                        However, their machines, identity, data, etc. are
+                            Information society
+            Lean into 'going outside the boundaries' concept
+                Explored in .hack// games
+                    Twilight Bracelet and 8 Phases / Morganna System / Aura in original quadrillogy
+                    Azure Kite, Epitaphs, Xth form, second half of .hack//G.U. Vol 3
+                    Doesn't take it far enough, needs to be a narrative cornerstone
+    Arcana Hacked
+        In-game event
+        Server is compromised by a hacker and the UI defaced
+            'Dankmaku Arcana', weed jokes
+            Small-time hack, not system-threatening
+            Need to log in and fix it

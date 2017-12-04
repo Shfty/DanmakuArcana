@@ -1,0 +1,24 @@
+Core:
+-How to play page for main menu
+-Proper pooling instead of instance removal for bullet pool, upgrade to 4.18
+
+UI:
+Playstation button prompts
+Press start to confirm name entry
+
+Battle:
+-KO effect
+-Handle player movement with cards instead of pawn
+-Multiple rounds
+-Hold on win text for a short time, proper implementation
+-Flash card on activation
+-Better communication of clash input requirements / outcome to players
+-Rule modifier: Wrap around play area edges
+-Bullet parameter: Max angular velocity
+-Bullet parameter: Angular velocity ping-pong
+-Bullet parameter: Wrap count, determines number of times that a bullet can wrap around the play area before escaping and being destroyed
+-Transition hitbox graphic between shooting and casting with scale and material lerp
+
+Netcode:
+-Refactor FadeInLoadScreenAndTravel using replication?
+-Factor in client ping instead of hardcoding manual delays in game mode flow

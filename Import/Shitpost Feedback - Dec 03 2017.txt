@@ -1,0 +1,101 @@
+Feedback
+========
+Caster badly needs more stuff to do after pattern is activated
+    Supplementary attacks, patterns with multiple uses, patterns that don't last the whole game
+    Multiple functions per card?
+        Tap for standard version
+        Hold for more expensive EX version
+        May be overcomplicating things considering that there are already 8 slots
+Feels bad having to move through the shooting player's bullet stream while dodging as casting player
+    Gameplay is balanced for it, but it feels bad
+    Is having the caster take chip damage the right choice?
+        Yes, but perhaps not exclusively
+            Scrapping chip in favor of burst-only would take away from the danmaku boss fight feel
+    Accentuated by the lack of non-pattern tools for caster and general lack of tools for shooter
+Better communication of player roles
+    Show 'casting' / 'shooting' somehow when a round starts
+        Text overlay on side / character?
+            Scroll + fade "Cast" and "Shoot" across respective sides
+    Visual distinction between modes
+        Streamlined / Fast for shooter
+        Beefy / Powerful for caster
+Four player local support is pointless as the game is two player
+    Being able to log in and out via profile system means 4 controllers isn't necessary
+        Hotswap controller and have next player login to their own profile
+Clash state needs to be more obvious
+    Declare outcome if notable (a.k.a. non-draw)
+        Coloured text (red tint for caster, blue tint for shooter)
+        "Cast extension +10sec"
+        "Clash strike"
+    Show player lane and stance for 3.. 2.., hide it for 1..., then show again on Clash! when inputs are locked in
+        Indicates that players can affect outcome with input
+        Explicitly communicates outcome in the context of those inputs
+        Adds to clash mindgame
+            Indicates to players that they should be thinking about what their opponent will do
+        How to indicate?
+            UI next to character?
+                Explicit
+                Instantly readable
+            Character animation?
+                Readable if animation poses are distinct
+                Adds element of style, cool poses
+                More implicit
+            UI and animation?
+                Best of both worlds
+                Can implement independently
+Shooter feels like they have more agency despite having less of a toolset
+    Currently they dictate the fight as the caster has no way to avoid damage
+    Caster needs defense tools and ways to force the shooter to not strafe across them
+        Shields
+        Dodges
+        Attacks
+            More spatial control
+    Shooter needs tools to counter this new tech
+
+Card ideas:
+Swap bullet pattern owner
+    Have to hit the bullet spawner origin with a one-shot attack?
+        Introduces concept of bullet origin
+            May lead to further interesting gameplay
+    Visual cue followed by owner changing to whoever activated the card
+
+Personal Thoughts
+=================
+Both players need a complete toolset before the base concept can be considered proven
+    Systems are working, but gameplay is lacking
+Need to lean into characters as a design pattern
+    Freedom to build a deck is core to the concept, but not necessarily approachable
+    Game needs to be pick-up-and-play
+    Start with fixed-parameter, wean players onto customization for higher-level play
+    Quite possible that the characters would end up taking precedence over customization
+        Players latch onto characters and their designs, personalities, etc.
+        Deck building serves more of a strategic niche
+        No reason they can't coexist, but characters will likely be at the fore whether I like it or not
+Timer bar looks like a constraint, makes players think they can't cross it
+    Elegant from the current UI standpoint but impedes gameplay
+    What to replace it with?
+        Radial clock?
+            Would still get in the way
+        Traditional countdown timer?
+            Where to put it?
+Caster is seen as the 'boss' role
+    Inherently more powerful
+    Counter to intention of neither side being inferior
+    Has more options, does more damage, attacks are more impressive
+    To push back against this, or lean into it?
+        Think on it more as player toolkits are fleshed out
+Round tempo needs serious work
+    Single pattern into nothing but dodging is dull
+    Limits opportunities for interesting interactions
+    Symptomatic of limited player toolsets
+Is the three-lane clash too much?
+    Likely dependent on whether the UI indication works well
+    Would two-lane work?
+    How does it fit into the fighting game paradigm?
+        Neutral into Player advantage
+        2/3 chance of guaranteed momentum change
+        1/3 chance of contested momentum change
+        Two layers of yomi (lane and stance)
+        Is this the right balance?
+        Needs a good rhythm of round changes
+            More approachable if you're not being Marvel 3'd to death by an experienced player
