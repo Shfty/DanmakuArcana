@@ -8,6 +8,7 @@
 |-----------|:------------:|:--------------:|:-------------:|
 |   Move    |   WASD       |    D-Pad       |   D-Pad       |
 |           |              |    Left Analog |   Left Analog |
+|           |              |                |               |
 |   Card A  |   Y          |    X           |   Square      |
 |   Card B  |   U          |    Y           |   Triangle    |
 |   Card C  |   I          |    RB          |   R1          |
