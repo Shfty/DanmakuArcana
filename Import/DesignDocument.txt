@@ -117,6 +117,12 @@ Card-based
                     Recovery period with no control to reward opponent with free damage on hard read
                 Constrict
                     Temporarily shrink play area
+                Forfeit
+                    Give up the remainder of your turn and initiate a clash with no countdown
+                    High risk / high reward
+                    Still has a readable startup
+                    Lock n seconds before the round ends to prevent abuse
+                        Players shouldn't be able to have a full turn and then instaclash too
             Movement styles
                 Standard movement
                     Eight-way control
@@ -132,7 +138,7 @@ Card-based
             Shot types
                 Normal
                     Equip-time cost
-                    Fire rate, damage and size parameters
+                    Fire rate, damage, size and homing parameters
                 Counter
                     Equip time cost
                     Successive hits fill a bar
@@ -153,14 +159,20 @@ Card-based
                 Equip-time cost
                 Runtime cost to activate?
                 Thousand fists
-                    Triggers on clash win
+                    Auto triggers on clash win
                     Lower base damage
                     Mash for bonus damage
                     Overall higher damage potential than standard clash
                     ORAORAORAORAORA
                 Overpower
-                    Triggers on clash draw
-                    Go into a weapon-locked mash-off, winner is the first to fill a bar
+                    Auto triggers on clash draw
+                    Instead of re-clashing, go into a weapon-locked mash-off, winner is the first to fill a bar
+                Clash Parry
+                    Triggers on clash loss, small window after result is decided
+                    Locks out until the next round if triggered prematurely
+                    Multi-round recharge time to prevent abuse?
+                    Shooter: Parry clash strike to negate damage
+                    Caster: Parry shooter's attack and force a re-clash
 Life bar-based
     Take a chunk of damage if hit by bullet pattern
     Chip damage if hit by shooting
