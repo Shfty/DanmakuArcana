@@ -42,13 +42,12 @@ Card-based
                 Created from old low-poly game data
         Admin_Sys
             Sysadmin users
-            'Ezra'
-                Sysadmin
+            Ezra
                 Owns and runs the Danmaku Arcana server
                     Hobby project with Cherry when they're not working with the Fight Squad
                     "I told you building your own distro for this was a bad idea"
-                        "Nah, building my own distro means I can do THIS"
-                The Jeff Gerstmann-esque walking encyclopedia of Danmaku games
+                        "Nah, check this out"
+                Walking encyclopedia of Danmaku games
                     Casual genre omniscience
                     Not necessarily godly at playing them
                 Full sysadmin permissions
@@ -60,19 +59,20 @@ Card-based
                             Paints her as a more sympathetic character than a system nuke
                             Avoids nerfing her admin powers
                                 Good excuse for cool abilities
-                Not a pro sysadmin in terms of experience, but competent enough to wrangle a linux system
-            'Cherry'
+                Not a pro sysadmin in terms of experience, but competent enough to wrangle a linux box
+            Cherry
                 Moderator
                 Danmaku enthusiast
-                    Has finished all of the Touhou (or in-universe alternative) games on the highest difficulty
+                    Has finished all of the Touhou (or rather, the in-universe equivalent) games on the highest difficulty
                         "Touhou XXVI was innovative but brutal"
                         "Call me old fashioned but 8 is still the best"
                     Owns 2+ arcade sticks
                         "A lot of people prefer seimutsu for these games but sanwa is my favourite"
                 Doesn't have as many elevated server permissions as Ezra
                     Plot device for run-ins with hackers and rogue AIs
+                    Granted elevated permissions as the plot progresses and the stakes rise
                 Casual hobbyist programmer
-                    Still learning basic C++, no framework/engine knowledge
+                    Still learning the basics, no framework/engine knowledge
         Hackers
             InfoSec users
             'Tycho'
@@ -93,16 +93,24 @@ Card-based
                 Has a startup time, can be stopped during startup if the shooting player can deal enough damage
                 Can't move during startup
                 Flashes name and pattern visualization on screen when activated
+                Guitar Hero Pattern
+                    Cast a colour on the opponent that makes them invulnerable to a certain color, then fire bursts of various colours for the duration
+                    Better as a character card set / gimmick?
             Direct attacks
                 Multi-use attacks to augment bullet patterns
             Defensive technqiues
                 Bubble shield
                     Gradius-style radial shield with limited health
+                    Variant: Gaia Shield
+                        Transparent planet earth instead of standard bubble
                 Physical shield
                     Gradius-style frontal shield with limited health
                 Shadow clone
                     Spawns an autonomous clone and freezes life bar for a duration
                     Any damage to clone is null, damage to caster is accumulated and applied when card times out
+                Bullet Void
+                    Remove bullets in a radius
+                    AoE at the end of a projectile, or centered on the user
             Trick techniques
                 Pull a swerve on your opponent
                 Blink
@@ -123,6 +131,14 @@ Card-based
                     Still has a readable startup
                     Lock n seconds before the round ends to prevent abuse
                         Players shouldn't be able to have a full turn and then instaclash too
+                Duplex
+                    All on-screen bullets pause and orbit around their spawner, dropping copies at set intervals
+                    Multiplies current bullet output
+                    Sudden change in trajectory, surprise
+                Maze
+                    Fire out a set of bullets that stop, form a maze of beams between them, and orbit around the caster
+                    Should the beams block bullets?
+                    Should the bullet beams move outward? Super Hexagon style, navigate this or eat damage
             Movement styles
                 Standard movement
                     Eight-way control
@@ -228,7 +244,7 @@ Ideas
             In-game call-to-action / protagonist introduction?
                 On-screen text box, "What the-?"
                 Interface disintegrates into new vector line tron look
-                "Why is it falling back to the old interface? I meant to clear that out ages ago"
+                "Why is it falling back to the old interface? I meant to delete that ages ago"
         In reality, the Danmaku Arcana is a server and you're accessing it via terminal
             Framing should make sense, don't want to fall into the 'because future' hole
                 Ex: .hack://G.U. is set in an online game capable of causing real-world network crises and putting players in comas
@@ -259,8 +275,10 @@ Ideas
                                 Altering existing scenarios
                                     Making games unwinnable with ridiculous enemy/bullet patterns
                                         Kaizo
+                                        Try to play legit, repeated instadeath, then bring out admin powers for the 'real level'
                                 Uploading their own games as a form of advertising
                                     Mostly crap
+                                        Meme-tier asset flips
                                     One or two genuinely good entries despite the methodology
                                 Mining cryptocurrency and eating performance
                                     Existing scenarios start 'lagging'
@@ -294,7 +312,7 @@ Ideas
                         Archived games range from old 2D to hypothetical future 3D and VR/AR danmaku
                             In-world setting is 3D
                                 Explained via existing code being repurposed to create the simulation
-                            Callback to shmup 3D prototype?
+                            Callback to Shmup 3D prototype?
                     Real-world users are NOT at risk
                         However, their machines, identity, data, etc. are
                             Information society
@@ -309,3 +327,6 @@ Ideas
             'Dankmaku Arcana', weed jokes
             Small-time hack, not system-threatening
             Need to log in and fix it
+    
+    Game-breaking bug / ROP Chain
+        Antagonist uses a ROP technique to break into the code of one of the danmaku games and swing a boss battle in their favour
